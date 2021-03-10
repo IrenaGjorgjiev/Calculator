@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    font-size: 62.5%;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    background:center / cover no-repeat url('https://images.unsplash.com/photo-1489674267075-cee793167910?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1267&q=80');
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* ------------------Calculator------------------ */
+.container  {
+    display: flex;
+    position: absolute;
+    z-index: 1;
+    background: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    overflow: hidden;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    box-shadow: 3px 4px 9px #3b3b3b, 0px 0px 7px #ffffff;
+}
+
+.calculator {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 715px;
+    width: 400px;
+    min-width: 400px;
+    min-height: 715px;
+}
+
+.screen {
+    height: 30%;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding-right: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.screen .previous-operand {
+    font-size: 2.4rem;
+}
+.screen .current-operand {
+    font-size: 4rem;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center
+}
+
+.keys {
+    width: 100px;
+    height: 100px;
+    font-size: 2.3rem;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    color: white;
+    transition: 0.25s;
+    background: rgba(255, 255, 255, 0.1);
+    outline: none;
+}
+
+.calculator .keys:hover {
+    transition: 0s;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.calculator .keys:active {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+/* ------------------Animation------------------ */
+.bubbles {
+    position: absolute;
+    bottom: 100px;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.bubbles span {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(5px);
+    animation: move 10s linear infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes move {
+    100% {
+        transform: translateY(-90vh);
+    }
+}
+
+.bubbles span.one {
+    animation-delay: 2.2s;
+    transform: scale(2.15);
+}
+.bubbles span.two {
+    animation-delay: 3.5s;
+    transform: scale(1.55);
+}
+.bubbles span.three {
+    animation-delay: 0.2s;
+    transform: scale(0.35);
+}
+.bubbles span.four {
+    animation-delay: 6ss;
+    transform: scale(2.15);
+}
+.bubbles span.five {
+    animation-delay: 7s;
+    transform: scale(0.5);
+}
+.bubbles span.six {
+    animation-delay: 4s;
+    transform: scale(2.5);
+}
+.bubbles span.seven {
+    animation-delay: 3s;
+    transform: scale(1.5);
+}
+
+.bubbles span:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 60px;
+    width: 40%;
+    transform: skew(45deg) translateX(150px);
+    background: rgba(255, 255, 255, 0.15);
+    animation: mirror 3s linear infinite;
+}
+
+@keyframes mirror {
+    100% {
+        transform: translateX(-450px);
+    }
+}
+
+.bubbles span.one:before {
+    animation-delay: 1.5s;
+}
+.bubbles span.two:before {
+    animation-delay: 3.5s;
+}
+.bubbles span.three:before {
+    animation-delay: 2.5s;
+}
+.bubbles span.four:before {
+    animation-delay: 7.5s;
+}
+.bubbles span.five:before {
+    animation-delay: 4.5s;
+}
+.bubbles span.six:before {
+    animation-delay: 0.5s;
+}
+.bubbles span.seven:before {
+    animation-delay: 6s;
+}
